@@ -101,7 +101,6 @@ a {
 }
 
 .search-input {
-  position: relative;
   border: none;
   width: 358px;
   height: 50px;
@@ -111,20 +110,49 @@ a {
   opacity: 0.3;
 }
 
-.search-input::before {
-  content: "33333";
+.search-input:hover {
+  opacity: 0.6;
+}
+
+.search-input:focus {
+  opacity: 1;
+  border: 2px solid black;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  outline: none;
+}
+
+.search-input:focus + .search-button {
+  display: block;
+}
+
+.search-form::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 20px;
+  left: 3px;
   width: 16px;
   height: 16px;
-  background: url("img/search.svg");
+  background: url("../img/search.svg");
 }
 
 .search-button {
   padding: 15px 20px;
   background: none;
   border: 2px solid #000000;
+  display: none;
+}
+
+.search-button:hover {
+  background: black;
+  color: white;
+}
+
+.search-button:active {
+  opacity: 0.3;
+  background: black;
+  color: white;
 }
 
 .catalog-button {
@@ -141,7 +169,7 @@ a {
 }
 
 .container-nav-2 {
-  margin-bottom: 39px;
+  margin-bottom: 37px;
 }
 
 .container-nav-2, .nav-information {
@@ -181,6 +209,7 @@ a {
 
 .cart-item {
   margin-left: 20px;
+
 }
 
 .nav-information {
@@ -209,4 +238,100 @@ a {
 .information-item:nth-child(3n+2) {
   margin-right: auto;
   margin-left: 20px;
+}
+
+.menu-hover:hover,
+.menu-hover:focus {
+  opacity: 0.6;
+}
+
+.menu-hover:active {
+  opacity: 0.3;
+}
+
+.user-navigation li,
+.cart-item,
+.information-item {
+  position: relative;
+}
+
+.login-user::before {
+  content: "";
+  position: absolute;
+  top: 10px ;
+  left: 20px;
+  width: 13px;
+  height: 12px;
+  background: url("../img/user.svg");
+  background-repeat: no-repeat;
+}
+
+.compare::before {
+  content: "";
+  position: absolute;
+  top: 10px ;
+  left: 25px;
+  width: 10px;
+  height: 10px;
+  background: url("../img/compare.svg");
+  background-repeat: no-repeat;
+}
+
+.cart::before {
+  content: "";
+  position: absolute;
+  top: 8px ;
+  left: 22px;
+  width: 12px;
+  height: 12px;
+  background: url("../img/cart.svg");
+  background-repeat: no-repeat;
+}
+
+.container-for-relative {
+  position: relative;
+}
+
+.container-for-catalog-button {
+  position: absolute;
+  background: black;
+  height: 16px;
+  width: 2px;
+  top: 4px;
+  right: 16px;
+  opacity: 0.5;
+}
+
+.container-for-catalog-button::after {
+  content: "";
+  position: absolute;
+  top: 7px ;
+  left: -7px;
+  width: 16px;
+  height: 2px;
+  background: black;
+}
+
+.catalog-list {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  left: 0;
+  top: 130px;
+  background: #f7e296;
+  list-style: none;
+  padding: 0 500px 35px 60px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.catalog-item {
+  width: 200px;
+}
+
+.catalog-link {
+  color: black;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 36px;
 }
